@@ -80,6 +80,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578717518277</updated>
       <workItem from="1578717551393" duration="6203000" />
+      <workItem from="1578919259956" duration="1546000" />
     </task>
     <servers />
   </component>
@@ -91,5 +92,9 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1578727728325" />
+    <state x="390" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1578919302544">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="390" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1578919302544" />
   </component>
 </project>
