@@ -1,0 +1,23 @@
+{% extends 'Employer/Employer authentication/header_footer.html' %}
+{% load static %}
+
+{% block 'content' %}
+ <!-- Content Body Start -->
+        <div class="content-body">
+
+
+            <center>
+                <div class="col-12" style="margin-top:15%">
+                    <form method="post">
+                        {% csrf_token  %}
+                        <p>Are You Sure, <span style="color:red">You Want To Logout ?? </span></p>
+                        <button class="form-control" style="width:15%;background-color:white" > Logout </button>
+                    </form>
+                </div>
+            </center>
+
+
+        </div><!-- Content Body End -->
+
+
+{% endblock %}

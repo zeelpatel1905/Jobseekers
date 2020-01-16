@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'Home',
     'Employer',
     'User',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,11 @@ if DEBUG:
     STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "JobSeekers", "static", "static-only")
     MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "JobSeekers", "static", "media")
     STATICFILES_DIRS = (os.path.join(os.path.dirname(BASE_DIR), "JobSeekers", "static", "static"),)
+
+
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'jobseeker0205@gmail.com'
+EMAIL_HOST_PASSWORD = 'jobportal'
+EMAIL_PORT = 587

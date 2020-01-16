@@ -25,7 +25,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/static/static" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -81,6 +81,7 @@
       <updated>1578717518277</updated>
       <workItem from="1578717551393" duration="6203000" />
       <workItem from="1578919259956" duration="1546000" />
+      <workItem from="1578930969317" duration="2216000" />
     </task>
     <servers />
   </component>
