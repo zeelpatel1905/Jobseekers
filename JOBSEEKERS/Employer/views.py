@@ -44,7 +44,7 @@ def Login_view(request):
         is_pass = Employee.objects.filter(emp_password__iexact=password).exists()
         if is_email and is_pass:
             request.session['email'] = email
-            return redirect('company:home')
+            return redirect('Company:Home')
     else:
         login = LoginForm()
 
@@ -56,7 +56,7 @@ def Logout_view(request):
     if request.session.get('email') != None:
         request.session.delete()
     else:
-        return redirect('company:userlogin')
+        return redirect('Company:Login')
 
     template = "Employer/Employer authentication/logout.html"
     return render(request, template, {})
