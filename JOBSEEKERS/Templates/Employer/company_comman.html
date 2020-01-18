@@ -262,7 +262,7 @@
                                             <img src="{% static 'Company/images/avatar/avatar-1.jpg' %}" alt="">
                                             <span class="status"></span>
                                             </span>
-                                            <span class="name"> {{ request.session.company_details }} </span>
+                                            <span class="name"> {{ request.session.email }} </span>
                                             </span>
                                         </a>
 
@@ -313,10 +313,25 @@
                         </li>
                         <li class="has-sub-menu"><a href="#"><i class="ti-package"></i> <span>Profile</span></a>
                             <ul class="side-header-sub-menu">
+                                {% if request.session.super and True %}
                                 <li><a href="elements-avatar.html"><span>View Profile</span></a></li>
+                                {% else %}
                                 <li><a href="elements-avatar.html"><span>Edit Profile</span></a></li>
+                                {% endif %}
                             </ul>
                         </li>
+
+                        <li class="has-sub-menu"><a href="#"><i class="ti-package"></i> <span>Manage Employee</span></a>
+                            <ul class="side-header-sub-menu">
+                                {% if request.session.super and True %}
+                                <li><a href="{% url 'Company:Addnewemployee' %}"><span>New employee</span></a></li>
+                                {% else %}
+                                <li><a href="elements-avatar.html"><span>Edit Profile</span></a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+
+
                         <li class="has-sub-menu"><a href="#"><i class="ti-crown"></i> <span>Advance Elements</span></a>
                             <ul class="side-header-sub-menu">
                                 <li><a href="elements-clipboard.html"><span>Clipboard</span></a></li>

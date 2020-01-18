@@ -23,9 +23,12 @@ def Add_Employee_view(request):
             email_to = [email, ]
             send_mail(subject, message, email_from, email_to)
 
+            data = Employee.objects.filter(emp_email= request.session.get('email'))
+            f.emp_company = data.emp_company
+            print(f.emp_company)
             f.save()
             messages.success(request, 'data Enter Done !!')
-            return redirect('company:home')
+            return redirect('Company:Home')
     else:
         messages.error(request, 'Please Correct the error below.')
         form = EmployeeForm()
@@ -44,10 +47,14 @@ def Login_view(request):
         is_pass = Employee.objects.filter(emp_password__iexact=password).exists()
         if is_email and is_pass:
             request.session['email'] = email
+            data = Employee.objects.get(emp_email = email)
+            is_super = data.is_super_emp
+            print(is_super)
+            request.session['super'] = is_super
+            print(data)
             return redirect('Company:Home')
     else:
         login = LoginForm()
-
     return render(request, template, {'login_form':login})
 
 

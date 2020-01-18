@@ -5,5 +5,43 @@
 
 
 {% block 'content' %}
-    <h1>Company.....</h1>
+
+
+        <div class="content-body">
+
+            <!-- Page Headings Start -->
+            <div class="row justify-content-between align-items-center mb-10">
+
+                <!-- Page Heading Start -->
+                <div class="col-12 col-lg-auto mb-20">
+                    <div class="page-heading">
+                        <h3>{{ request.session.company_name }}</h3>
+                    </div>
+                </div><!-- Page Heading End -->
+
+            </div><!-- Page Headings End -->
+
+            <div class="row mbn-50">
+                <!--Right Sidebar Start-->
+                <div class="col-xlg-12 col-12 mb-50">
+                    <div class="row mbn-30">
+
+                        <!--Author Information Start-->
+                        <div class="col-xlg-12 col-lg-12 col-12 mb-30">
+                            <div class="box">
+                                <div class="box-body">
+    {{ request.session.super }}
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Author Information End-->
+                    </div>
+                </div>
+                <!--Right Sidebar End-->
+
+            </div>
+
+        </div><!-- Content Body End -->
+
 {% endblock %}
