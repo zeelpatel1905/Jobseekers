@@ -23,7 +23,7 @@
                 <!--Right Sidebar Start-->
                 <div class="col-xlg-12 col-12 mb-50">
                     <div class="row mbn-30">
-
+                        <h3>Create New Job Requirement</h3>
                         <!--Author Information Start-->
                         <div class="col-xlg-12 col-lg-12 col-12 mb-30">
                             <div class="box">
@@ -34,7 +34,7 @@
                                             <div class="row row-10 mbn-20">
 
 
-
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Job Detail</h4></div>
                                                 <div class="col-sm-12 col-12 mb-20"> {{ job_upload_form.job_title | as_crispy_field }} </div>
                                                 <div class="col-sm-12 col-12 mb-20"> {{ job_upload_form.job_description | as_crispy_field }} </div>
 
@@ -42,15 +42,14 @@
                                                 <div class="col-sm-4 col-12 mb-20"> {{ job_upload_form.job_qualification | as_crispy_field }} </div>
                                                 <div class="col-sm-4 col-12 mb-20"> {{ job_upload_form.job_salary | as_crispy_field }} </div>
 
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Job Location</h4></div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_city | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_states | as_crispy_field }} </div>
 
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Teams & Conditions</h4></div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_deadline | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_bond_time | as_crispy_field }} </div>
                                                 <div class="col-sm-12 col-12 mb-20"> {{ job_upload_form.job_bond_documents | as_crispy_field }} </div>
-
-
-
 
                                                 <div class="col-12 mt-10 mb-20">
                                                     <button type="submit" class="button button-primary button-outline"> Submit </button>

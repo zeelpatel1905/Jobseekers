@@ -12859,7 +12859,7 @@ body.skin-dark .text-heading {
 }
 
 body.skin-dark h1, body.skin-dark h2, body.skin-dark h3, body.skin-dark h4, body.skin-dark h5, body.skin-dark h6, body.skin-dark .text-heading {
-  color: #ffffff;
+  color: gray;
 }
 
 body.skin-dark hr {
@@ -14501,7 +14501,8 @@ body.skin-dark .cus-radio.light .icon::before {
     padding-right: 0 !important;
   }
   [dir="rtl"] .header-notification-area > li:last-child {
-    padding-left: 0 !important;
+    padding-left: 0
+ !important;
     padding-right: 10px !important;
   }
 }

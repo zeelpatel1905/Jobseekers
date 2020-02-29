@@ -21,7 +21,7 @@ class EmployeeForm(forms.ModelForm):
             'emp_last_name': forms.TextInput(attrs={'placeholder': 'Enter Last Name', 'class': 'form-control'}),
             'emp_email': forms.EmailInput(attrs={'placeholder': 'Enter Email', 'class': 'form-control'}),
             'emp_phone': forms.NumberInput(attrs={'placeholder': 'Enter Phone Number', 'class': 'form-control'}),
-            'emp_bio': forms.TextInput(attrs={'placeholder': 'Enter Bio', 'class': 'form-control'}),
+            'emp_bio': forms.Textarea(attrs={'placeholder': 'Enter Bio', 'class': 'form-control'}),
             'emp_experience': forms.NumberInput(attrs={'placeholder': 'Enter Experience', 'class': 'form-control'}),
             'emp_street_name': forms.TextInput(attrs={'placeholder': 'Enter Street Name', 'class': 'form-control'}),
             'emp_pincode': forms.NumberInput(attrs={'placeholder': 'Enter Pincode', 'class': 'form-control'}),

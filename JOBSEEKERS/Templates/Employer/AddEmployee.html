@@ -23,7 +23,7 @@
                 <!--Right Sidebar Start-->
                 <div class="col-xlg-12 col-12 mb-50">
                     <div class="row mbn-30">
-
+                        <h3>Create New Employee</h3>
                         <!--Author Information Start-->
                         <div class="col-xlg-12 col-lg-12 col-12 mb-30">
                             <div class="box">
@@ -32,22 +32,29 @@
                                         <form method="post" enctype="multipart/form-data" >
                                             {% csrf_token %}
                                             <div class="row row-10 mbn-20">
-
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_dept | as_crispy_field }} </div>
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_designation | as_crispy_field }} </div>
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Personal Details</h4> </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.name | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_last_name | as_crispy_field }} </div>
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_email | as_crispy_field }} </div>
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_phone | as_crispy_field }} </div>
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_bio | as_crispy_field }} </div>
+                                                <div class="col-sm-12 col-12 mb-20"> {{ employee_form.emp_bio | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_birthdate | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_gender | as_crispy_field }} </div>
+
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Working Details</h4> </div>
+                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_dept | as_crispy_field }} </div>
+                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_designation | as_crispy_field }} </div>
+
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Experience Details</h4> </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_id_card | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_experience | as_crispy_field }} </div>
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_street_name | as_crispy_field }} </div>
+
+                                                <div class="col-sm-12 col-12 mb-20" style="border: 2px solid darkgrey;"> <h4 style="padding-top: 7px;">Contact Details</h4> </div>
+                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_email | as_crispy_field }} </div>
+                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_phone | as_crispy_field }} </div>
+                                                <div class="col-sm-12 col-12 mb-20"> {{ employee_form.emp_street_name | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_city | as_crispy_field }} </div>
                                                 <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_states | as_crispy_field }} </div>
-                                                <div class="col-sm-6 col-12 mb-20"> {{ employee_form.emp_pincode | as_crispy_field }} </div>
+                                                <div class="col-sm-12 col-12 mb-20"> {{ employee_form.emp_pincode | as_crispy_field }} </div>
+
                                                 <div class="col-12 mt-10 mb-20">
                                                     <button type="submit" class="button button-primary button-outline"> Submit </button>
                                                     <input type="reset" class="button button-danger button-outline" value="Reset">

@@ -3,8 +3,10 @@ from django.shortcuts import render, redirect
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
-from .models import Employee
+from .models import Employee,Job_upload
 from  .forms import EmployeeForm, LoginForm, add_new_password_form, forgot_password_form, otp_match_form, JobuploadForm
+from django.views.generic.list import ListView
+from itertools import chain
 import random
 
 
@@ -12,6 +14,8 @@ import random
 # Create your views here.
 def Company_Home_View(request):
     Temp = "Employer\index.html"
+    if request.session.get('email') == None:
+        return redirect("Company:Login")
     return render(request, Temp)
 
 
@@ -50,8 +54,13 @@ def Add_new_job(request):
         if form.is_valid():
             f = form.save(commit=False)
             data = Employee.objects.filter(emp_email= request.session.get('email'))
-            f.company_id = data.emp_company
-            print(f.emp_company)
+            print(data)
+            data1 = Employee.objects.values('emp_company_id')
+            print(data1)
+            f.comapny_id_id = data1
+
+            #print(data.emp_company_id)
+            print(f.comapny_id_id)
             f.save()
             messages.success(request, 'data Enter Done !!')
             return redirect('Company:Home')
@@ -155,3 +164,14 @@ def Add_new_password(request):
 
     return render(request,temp, {'form':add_password_form})
 
+class ViewJob(ListView):
+    paginate_by = 15
+    template_name = 'Employer/ViewJobList.html'
+
+    def get_queryset(self):
+        job = Job_upload.objects.all().order_by("job_upload_date")
+
+        job_list = sorted(
+            chain(job),
+            key=lambda Job_upload: Job_upload.job_upload_date, reverse=True)
+        return job_list
