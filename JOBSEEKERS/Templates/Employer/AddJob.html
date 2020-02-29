@@ -1,0 +1,75 @@
+{% extends 'Employer/company_comman.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block 'content' %}
+
+
+<!-- Content Body Start -->
+        <div class="content-body">
+
+            <!-- Page Headings Start -->
+            <div class="row justify-content-between align-items-center mb-10">
+
+                <!-- Page Heading Start -->
+                <div class="col-12 col-lg-auto mb-20">
+                    <div class="page-heading">
+                        <h3>{{ request.session.company_name }}</h3>
+                    </div>
+                </div><!-- Page Heading End -->
+
+            </div><!-- Page Headings End -->
+
+            <div class="row mbn-50">
+                <!--Right Sidebar Start-->
+                <div class="col-xlg-12 col-12 mb-50">
+                    <div class="row mbn-30">
+
+                        <!--Author Information Start-->
+                        <div class="col-xlg-12 col-lg-12 col-12 mb-30">
+                            <div class="box">
+                                <div class="box-body">
+                                    <div class="form">
+                                        <form method="post" enctype="multipart/form-data" >
+                                            {% csrf_token %}
+                                            <div class="row row-10 mbn-20">
+
+
+
+                                                <div class="col-sm-12 col-12 mb-20"> {{ job_upload_form.job_title | as_crispy_field }} </div>
+                                                <div class="col-sm-12 col-12 mb-20"> {{ job_upload_form.job_description | as_crispy_field }} </div>
+
+                                                <div class="col-sm-4 col-12 mb-20"> {{ job_upload_form.job_quentity | as_crispy_field }} </div>
+                                                <div class="col-sm-4 col-12 mb-20"> {{ job_upload_form.job_qualification | as_crispy_field }} </div>
+                                                <div class="col-sm-4 col-12 mb-20"> {{ job_upload_form.job_salary | as_crispy_field }} </div>
+
+                                                <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_city | as_crispy_field }} </div>
+                                                <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_states | as_crispy_field }} </div>
+
+                                                <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_deadline | as_crispy_field }} </div>
+                                                <div class="col-sm-6 col-12 mb-20"> {{ job_upload_form.job_bond_time | as_crispy_field }} </div>
+                                                <div class="col-sm-12 col-12 mb-20"> {{ job_upload_form.job_bond_documents | as_crispy_field }} </div>
+
+
+
+
+                                                <div class="col-12 mt-10 mb-20">
+                                                    <button type="submit" class="button button-primary button-outline"> Submit </button>
+                                                    <input type="reset" class="button button-danger button-outline" value="Reset">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Author Information End-->
+                    </div>
+                </div>
+                <!--Right Sidebar End-->
+
+            </div>
+
+        </div><!-- Content Body End -->
+
+{% endblock %}

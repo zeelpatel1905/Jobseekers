@@ -83,7 +83,7 @@ class Employee(models.Model):
     emp_last_name = models.CharField(max_length=40)
     emp_email = models.EmailField(max_length=30)
     emp_phone = models.CharField(max_length=10)
-    emp_password = models.CharField(max_length=50)
+    emp_password = models.CharField(max_length=50, null=True, blank=True)
     emp_bio = models.TextField(blank=True, null=True)
     emp_birthdate = models.DateField(null=True, blank=True)
     emp_gender = models.CharField(max_length=1,choices=Gender)
@@ -96,6 +96,7 @@ class Employee(models.Model):
     emp_pincode = models.IntegerField()
     is_super_emp = models.BooleanField(default=0)
 
+
     def __str__(self):
         return  self.name
 
@@ -103,3 +104,22 @@ def password_pre_save_receiver(sender, instance, *args, **kwargs):
     instance.emp_password = instance.name + "@" + str(instance.emp_birthdate)
 
 pre_save.connect(password_pre_save_receiver, sender=Employee)
+
+class Job_upload(models.Model):
+    comapny_id = models.ForeignKey(Company, on_delete=models.CASCADE)
+    job_title = models.CharField(max_length=30)
+    job_description = models.TextField(blank=True, null=True)
+    job_salary = models.DecimalField(decimal_places=2, max_digits=8)
+    job_city = models.ManyToManyField(City)
+    job_states = models.ManyToManyField(States)
+    job_country = models.CharField(default='India', max_length=10, editable=False)
+    job_qualification = models.CharField(max_length=30)
+    job_quentity = models.IntegerField()
+    job_upload_date = models.DateTimeField(auto_now_add=True)
+    job_deadline = models.DateField()
+    job_bond_time = models.IntegerField()
+    job_bond_documents = models.TextField(max_length=40)
+
+    def __str__(self):
+        return self.job_title
+
