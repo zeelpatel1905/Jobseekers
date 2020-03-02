@@ -57,7 +57,7 @@ class JobuploadForm(forms.ModelForm):
             'job_quentity' : forms.NumberInput(attrs={'placeholder' : 'Enter quentity', 'class':'form-control'}),
             'job_deadline' : DateInput(attrs={'placeholder':'enter deadline', 'class':'form-control'}),
             'job_bond_time' : forms.TextInput(attrs={'placeholder':'Enter bond time', 'class':'form-control'}),
-            'job_bond_documents' : forms.Textarea(attrs={'placeholder':'Enter bond conditions', 'class':'form-control'}),
+            'job_bond_documents' : forms.Textarea(attrs={'placeholder':'Enter bond Documents for submit', 'class':'form-control'}),
         }
 
     def __init__(self, *args, **kwargs):

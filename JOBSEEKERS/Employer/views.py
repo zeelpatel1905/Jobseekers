@@ -1,5 +1,5 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -175,3 +175,22 @@ class ViewJob(ListView):
             chain(job),
             key=lambda Job_upload: Job_upload.job_upload_date, reverse=True)
         return job_list
+
+def EditJob(request, pk):
+    template = 'Employer/EditJob.html'
+    job = get_object_or_404(Job_upload, pk=pk)
+    form = JobuploadForm(request.POST or None, request.FILES or None, instance=job)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Successfully Edited!')
+        return redirect('Company:ViewJob')
+    return render(request, template, {'job_upload_form': form})
+
+def DeleteJob(request, pk):
+    template = 'Employer/DeleteJob.html'
+    job = get_object_or_404(Job_upload, pk=pk)
+    if request.method == 'POST':
+        job.delete()
+        return redirect('Company:ViewJob')
+    return render(request, template, {'object': job})
+

@@ -26,13 +26,13 @@
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th>Job id</th>
                                         <th>company name</th>
                                         <th>Title</th>
                                         <th>Salary</th>
                                         <th>Qualification</th>
                                         <th>Quantity</th>
                                         <th>Deadline</th>
+                                        <th>Place</th>
                                         <th> Editable Option </th>
                                     </tr>
                                 </thead>
@@ -40,17 +40,18 @@
                                         {% for job in object_list %}
                                             <tbody>
                                                 <tr>
-                                                    <td>{{ job.id }}</td>
+
                                                     <td>{{ job.comapny_id }}</td>
                                                     <td>{{ job.job_title }}</td>
                                                     <td>{{ job.job_salary }}</td>
                                                     <td>{{ job.job_qualification }}</td>
                                                     <td>{{ job.job_quentity }}</td>
                                                     <td>{{ job.job_deadline }}</td>
+                                                    <td>{{ job.job_city }}</td>
                                                     <td>
                                                         <div class="col-6 mt-5 mb-10">
-                                                            <button type="button" class="button button-primary button-outline"> Edit </button>
-                                                            <input type="button" class="button button-danger button-outline" value="Delete">
+                                                            <button type="button" class="button button-primary button-outline"><a href='{% url "Company:Edit_Job" pk=job.id %}'> Edit </a></button>
+                                                            <button type="button" class="button button-danger button-outline"><a href='{% url "Company:Delete_Job" pk=job.id %}'> Delete </a></button>
                                                         </div>
                                                     </td>
                                                 </tr>
