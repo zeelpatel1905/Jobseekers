@@ -1,0 +1,57 @@
+{% extends 'User/user_comman.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block 'contain' %}
+    <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper" >
+        <div class="agileinfo_signin">
+        	<section class="job-bg user-page">
+		<div class="container  text-center">
+			<div class="user-account-content">
+				<div class="user-account job-user-account">
+					<h2>Confirmation your mail</h2>
+{#						<ul class="nav nav-tabs text-center" role="tablist">#}
+{#                            <li role="presentation"><a class="active" href="#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Confirmation your mail</a></li>#}
+{#						</ul>#}
+
+						<div class="tab-content">
+
+                     {% if confirmation %}
+
+
+
+                        <p style="font-size:15px; margin-top:2%; >{% blocktrans with confirmation.email_address.email as email %}Please confirm that <a style="color:blue" href="mailto:{{ email }}">{{ email }} </a> is an e-mail address for user {{ user_display }}.{% endblocktrans %} </p>
+
+                        <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
+                        {% csrf_token %}
+                            <center>
+                                <button class="btn btn-primary" style="border-radius: 5px" type="submit">&nbsp;&nbsp;Confirm&nbsp;&nbsp;</button>
+                            </center>
+
+                        </form>
+
+                        {% else %}
+
+                        {% url 'account_email' as email_url %}
+
+                        <p>{% blocktrans %}This e-mail confirmation link expired or is invalid. Please <a href="{{ email_url }}">issue a new e-mail confirmation request</a>.{% endblocktrans %}</p>
+
+                        {% endif %}
+
+
+
+						</div>
+				</div>
+			</div><!-- user-login -->
+		</div><!-- container -->
+	</section><!-- signup-page -->
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

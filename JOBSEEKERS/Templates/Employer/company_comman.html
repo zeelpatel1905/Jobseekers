@@ -158,8 +158,12 @@
                         <li class="has-sub-menu"><a href="#"><i class="ti-crown"></i> <span>Profile</span></a>
                             <ul class="side-header-sub-menu">
 
-                                <li><a href="elements-avatar.html"><span>View Profile</span></a></li>
+
+
+                                <li><a href="{% url 'Company:View_Profile' pk=request.session.user_id  %}"><span>View Profile</span></a></li>
                                 <li><a href="elements-avatar.html"><span>Edit Profile</span></a></li>
+
+
 
                             </ul>
                         </li>

@@ -21,4 +21,5 @@ urlpatterns = [
     path('',include('Home.urls_home')),
     path('company/', include('Employer.urls_employer', namespace="Company")),
     path('user/', include('User.urls_user', namespace="Employee")),
+    path('accounts/',include('allauth.urls')),
 ]

@@ -1,0 +1,52 @@
+{% extends 'User/user_comman.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block 'contain' %}
+    <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper" >
+        <div class="agileinfo_signin">
+        	<section class="job-bg user-page">
+		<div class="container  text-center">
+			<div class="user-account-content">
+				<div class="user-account job-user-account">
+					<h2>Create An Account</h2>
+						<ul class="nav nav-tabs text-center" role="tablist">
+							<li role="presentation"><a class="active" href="#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Sign Up</a></li>
+                            <li><a href="{{ login_url }}">Sign In</a></li>
+						</ul>
+
+						<div class="tab-content">
+							<div role="tabpanel" class="tab-pane active show" id="find-job">
+								<form action="{% url 'account_signup' %}" method="post">{% csrf_token %}
+									<div class="form-group">
+										<input type="text" class="form-control" placeholder="Name" name="username">
+									</div>
+									<div class="form-group">
+										<input type="email" class="form-control" placeholder="Email Id" name="email">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" placeholder="Password" name="password1">
+									</div>
+									<div class="form-group">
+										<input type="password" class="form-control" placeholder="Confirm Password" name="password2">
+									</div>
+                                    <button type="submit" class="btn">Registration</button>
+								</form>
+							</div>
+
+
+						</div>
+				</div>
+			</div><!-- user-login -->
+		</div><!-- container -->
+	</section><!-- signup-page -->
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}
