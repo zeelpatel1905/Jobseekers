@@ -1,0 +1,42 @@
+{% extends 'User/user_comman.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+{% block 'contain' %}
+    <section>
+    <div id="agileits-sign-in-page" class="sign-in-wrapper" >
+        <div class="agileinfo_signin">
+        	<section class="job-bg user-page">
+		<div class="container  text-center">
+			<div class="user-account-content">
+				<div class="user-account job-user-account">
+					<h2>Sign Out</h2>
+
+						<div class="tab-content">
+							<h3 class="confirm_logout_info">{% trans 'Are you sure you want to sign out?' %}</h3>
+                            <div role="tabpanel" class="tab-pane active show" id="find-job">
+								<form action="{% url 'account_logout' %}" method="post">{% csrf_token %}
+									{% if redirect_field_value %}
+                    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+                {% endif %}
+                                <button type="submit" class="btn btn-dark">Sign out</button>
+
+
+
+								</form>
+							</div>
+
+						</div>
+				</div>
+			</div><!-- user-login -->
+		</div><!-- container -->
+	</section><!-- signup-page -->
+
+
+        </div>
+    </div>
+</section>
+
+{% endblock %}

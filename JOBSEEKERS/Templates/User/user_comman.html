@@ -79,13 +79,30 @@
 
 				<!-- nav-right -->
 				<div class="nav-right">
-					<ul class="sign-in">
-						<li><i class="fa fa-user"></i></li>
-						<li><a href="signin.html">Sign In</a></li>
-						<li><a href="signup.html">Register</a></li>
-					</ul><!-- sign-in -->
 
-					<a href="post.html" class="btn">Post Your Job</a>
+                                      {% if request.user.username == "" %}
+                                            <ul class="sign-in">
+                                                <li><i class="fa fa-user"></i></li>
+                                                <li><a href="{% url 'account_login' %}">Sign In</a></li>
+                                                <li><a href="{{ signup_url }}">Register</a></li>
+                                            </ul><!-- sign-in -->
+
+                                        {% else %}
+
+                                                     <ul>
+
+                                                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown">{{ request.user.username}}</a>
+                                                	<ul class="dropdown-menu">
+                                                        <li><a href="profile.html">Profile</a></li><br>
+                                                        <li><a href="post-resume.html">Post Resume</a></li><br>
+                                                        <li><a href="{% url 'account_logout' %}">Log-out</a></li><br>
+	    						                    </ul>
+                                                </li>
+
+                                       {% endif %}
+
+
+
 				</div>
 				<!-- nav-right -->
 			</div><!-- container -->

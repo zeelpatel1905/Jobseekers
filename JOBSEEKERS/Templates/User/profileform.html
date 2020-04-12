@@ -1,0 +1,117 @@
+{% extends 'User/user_comman.html' %}
+{% load static %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+{% block 'contain' %}
+    <section class="clearfix job-bg  ad-profile-page" xmlns="http://www.w3.org/1999/html">
+		<div class="container">
+			<div class="breadcrumb-section">
+				<ol class="breadcrumb">
+					<li><a href="index-2.html">Home</a></li>
+					<li>Profile Details</li>
+				</ol>
+				<h2 class="title">My Profile</h2>
+			</div><!-- breadcrumb-section -->
+
+			<div class="job-profile section">
+				<div class="user-profile">
+					<div class="user-images">
+						<img src="images/user.jpg" alt="User Images" class="img-fluid">
+					</div>
+					<div class="user">
+						<h2>Hello, <a href="#">{{ user.username}}</a></h2>
+					</div>
+
+				</div><!-- user-profile -->
+
+				<ul class="user-menu">
+					<li><a href="profile.html">Account Info </a></li>
+					<li class="active"><a href="job-profile-details.html">Profile Details</a></li>
+					<li><a href="bookmark.html">Bookmark</a></li>
+					<li><a href="applied-job.html">applied job</a></li>
+				</ul>
+			</div><!-- ad-profile -->
+
+			<div class="profile job-profile">
+				<div class="user-pro-section">
+					<!-- profile-details -->
+					<div class="profile-details section">
+						<h2>Profile Details</h2>
+
+
+                    <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+
+                            <div class="form-group">
+								<label>Username</label>
+								<input type="text" class="form-control" value="{{ user.username }}" readonly>
+							</div>
+
+							<div class="form-group">
+								<label>Email ID</label>
+								<input type="email" class="form-control" value="{{ user.email }}" readonly>
+							</div>
+
+{#                            {{ p_form.as_p }}#}
+
+                       <div class="form-group">
+                           <label>Contact</label>
+                           {{ p_form.contact | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>Gender</label>
+                           {{ p_form.gender | as_crispy_field }}
+                       </div>
+                        <div class="form-group">
+                           <label>Date of Born</label>
+                           {{ p_form.birth_date | as_crispy_field }}
+                       </div>
+                        <div class="form-group">
+                           <label>Skils</label>
+                           {{ p_form.skils | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>Resume</label>
+                           {{ p_form.resume | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>Profile Image</label>
+                           {{ p_form.img | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>Exprerience Type</label>
+                           {{ p_form.exprerience_type | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>Street Name</label>
+                           {{ p_form.street_name | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>City</label>
+                           {{ p_form.city | as_crispy_field }}
+                       </div>
+
+                        <div class="form-group">
+                           <label>State</label>
+                           {{ p_form.states | as_crispy_field }}
+                       </div>
+
+
+                        <button  type="submit" class="btn btn-primary">Update Profile</button>
+
+                    </form>
+
+				</div><!-- user-pro-edit -->
+
+
+			</div>
+		</div><!-- container -->
+	</section><!-- ad-profile-page -->
+
+    {% endblock %}

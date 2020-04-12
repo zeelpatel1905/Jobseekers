@@ -42,11 +42,13 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="F:/Kleider-master" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\finalyearproject\JOBSEEKERS\Templates\accounts" />
+      <recent name="F:\finalyearproject\JOBSEEKERS\static\static\User" />
       <recent name="F:\finalyearproject\JOBSEEKERS\static\static" />
     </key>
   </component>
@@ -109,7 +111,14 @@
       <workItem from="1581915459985" duration="823000" />
       <workItem from="1582090329763" duration="5274000" />
       <workItem from="1582792897850" duration="1078000" />
-      <workItem from="1582956516715" duration="30335000" />
+      <workItem from="1582956516715" duration="37730000" />
+      <workItem from="1583225464190" duration="4428000" />
+      <workItem from="1583301036778" duration="2606000" />
+      <workItem from="1584429836260" duration="3750000" />
+      <workItem from="1585553414766" duration="4306000" />
+      <workItem from="1585580529610" duration="7940000" />
+      <workItem from="1586088670151" duration="8685000" />
+      <workItem from="1586261552447" duration="23568000" />
     </task>
     <servers />
   </component>
@@ -121,10 +130,10 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="413" y="114" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1366.728@0.0.1366.728" timestamp="1583139601512" />
-    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1583077993813">
+    <state x="463" y="123" key="FileChooserDialogImpl" timestamp="1586453948062">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1583077993813" />
+    <state x="463" y="123" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1586453948062" />
     <state width="1323" height="179" key="GridCell.Tab.0.bottom" timestamp="1581916357053">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -161,17 +170,25 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state width="196" height="457" key="HiddenNamespacesPopup/0.0.1366.728@0.0.1366.728" timestamp="1583139580157" />
-    <state x="186" y="10" key="SettingsEditor" timestamp="1581916114002">
+    <state x="186" y="10" key="SettingsEditor" timestamp="1584430135555">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1581916114002" />
-    <state x="390" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1582792900964">
+    <state x="186" y="10" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1584430135555" />
+    <state x="390" y="193" key="com.intellij.ide.util.TipDialog" timestamp="1583225466103">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="390" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1582792900964" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1582992442510">
+    <state x="390" y="193" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1583225466103" />
+    <state x="92" y="92" width="1182" height="544" key="dock-window-1" timestamp="1586261798493">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1582992442510" />
+    <state x="92" y="92" width="1182" height="544" key="dock-window-1/0.0.1366.728@0.0.1366.728" timestamp="1586261798493" />
+    <state x="328" y="91" width="709" height="546" key="find.popup" timestamp="1586365709391">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="328" y="91" width="709" height="546" key="find.popup/0.0.1366.728@0.0.1366.728" timestamp="1586365709391" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1586702758924">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1586702758924" />
   </component>
 </project>

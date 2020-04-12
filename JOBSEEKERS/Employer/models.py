@@ -77,8 +77,8 @@ class Employee(models.Model):
     )
 
     emp_company = models.ForeignKey(Company, on_delete=models.CASCADE)
-    emp_dept = models.ManyToManyField(Dept)
-    emp_designation = models.ManyToManyField(Designation)
+    emp_dept = models.ForeignKey(Dept, on_delete=models.CASCADE)
+    emp_designation = models.ForeignKey(Designation, on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
     emp_last_name = models.CharField(max_length=40)
     emp_email = models.EmailField(max_length=30)
@@ -96,16 +96,17 @@ class Employee(models.Model):
     emp_pincode = models.IntegerField()
     is_super_emp = models.BooleanField(default=0)
 
-
     def __str__(self):
         return  self.name
 
-def password_pre_save_receiver(sender, instance, *args, **kwargs):
-    instance.emp_password = instance.name + "@" + str(instance.emp_birthdate)
 
-pre_save.connect(password_pre_save_receiver, sender=Employee)
 
 class Job_upload(models.Model):
+    Time_Type = (
+        ("F", "Full Time"),
+        ("P", "Part Time"),
+    )
+
     comapny_id = models.ForeignKey(Company, on_delete=models.CASCADE)
     job_title = models.CharField(max_length=30)
     job_description = models.TextField(blank=True, null=True)
@@ -117,6 +118,7 @@ class Job_upload(models.Model):
     job_qualification = models.CharField(max_length=30)
     job_quentity = models.IntegerField()
     job_upload_date = models.DateTimeField(auto_now_add=True)
+    job_time_type = models.CharField(max_length=1, choices=Time_Type)
     job_deadline = models.DateField()
     job_bond_time = models.IntegerField()
     job_bond_documents = models.TextField(max_length=40)

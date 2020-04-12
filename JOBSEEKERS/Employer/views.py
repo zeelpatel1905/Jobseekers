@@ -6,6 +6,7 @@ from django.core.mail import send_mail
 from .models import Employee,Job_upload
 from  .forms import EmployeeForm, LoginForm, add_new_password_form, forgot_password_form, otp_match_form, JobuploadForm
 from django.views.generic.list import ListView
+from django.views.generic import DetailView
 from itertools import chain
 import random
 
@@ -24,23 +25,57 @@ def Add_Employee_view(request):
     if request.method == 'POST':
         print("In post")
         form = EmployeeForm(request.POST or None, request.FILES or None)
-        if form.is_valid():
-            print("Is Valid")
-            f = form.save(commit=False)
-            email = request.POST.get('emp_email')
-            name = request.POST.get('emp_name')
-            subject = 'Hello ' + str(name) + ' From JobSeekers'
-            message = "stay connected. we would love to hear from you    http://127.0.0.1:8000/company_admin/login"
-            email_from = settings.EMAIL_HOST_USER
-            email_to = [email, ]
-            send_mail(subject, message, email_from, email_to)
 
-            data = Employee.objects.filter(emp_email= request.session.get('email'))
-            f.emp_company = data.emp_company
-            print(f.emp_company)
-            f.save()
-            messages.success(request, 'data Enter Done !!')
-            return redirect('Company:Home')
+
+
+
+        email = request.POST.get('emp_email')
+        name = request.POST.get('emp_name')
+
+        data = Employee.objects.filter(emp_email=request.session.get('email'))
+        print(data)
+        form.emp_company = 1
+        print(form.emp_company)
+        form.emp_password = 'abc'
+        print(form.emp_password)
+        form.is_super_emp = 0
+
+
+        print("Is Valid")
+
+        print(form.emp_company)
+        print(form.emp_dept)
+        print(form.emp_designation)
+        print(form.name)
+        print(form.emp_last_name)
+        print(form.emp_email)
+        print(form.emp_phone)
+        print(form.emp_password)
+        print(form.emp_bio)
+        print(form.emp_birthdate)
+        print(form.emp_gender)
+        print(form.emp_id_card)
+        print(form.emp_experience)
+        print(form.emp_street_name)
+        print(form.emp_city)
+        print(form.emp_states)
+        print(form.emp_country)
+        print(form.emp_pincode)
+        print(form.is_super_emp)
+
+
+
+
+
+        print("data save")
+        # subject = 'Hello ' + str(name) + ' From JobSeekers'
+        # message = "stay connected. we would love to hear from you    http://127.0.0.1:8000/company_admin/login"
+        # email_from = settings.EMAIL_HOST_USER
+        # email_to = [email, ]
+        # send_mail(subject, message, email_from, email_to)
+        # print("mail send")
+        # messages.success(request, 'data Enter Done !!')
+        #
     else:
         messages.error(request, 'Please Correct the error below.')
         form = EmployeeForm()
@@ -84,8 +119,10 @@ def Login_view(request):
             request.session['email'] = email
             data = Employee.objects.get(emp_email = email)
             is_super = data.is_super_emp
+            user_id = data.id
             print(is_super)
             request.session['super'] = is_super
+            request.session['user_id'] = user_id
             print(data)
             return redirect('Company:Home')
     else:
@@ -193,4 +230,19 @@ def DeleteJob(request, pk):
         job.delete()
         return redirect('Company:ViewJob')
     return render(request, template, {'object': job})
+
+
+class Employee_Profile(DetailView):
+    queryset = Employee.objects.all()
+    template_name = "Employer/ProfileView.html"
+
+    def get_context_data(self, *args, **kwargs):
+        context = super(Employee_Profile, self).get_context_data(*args, **kwargs)
+        return context
+
+    def get_object(self, *args, **kwargs):
+        request = self.request
+        instance = get_object_or_404(Employee)
+        return instance
+
 
